@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxiCostXamarin.MainPage">
+  <ContentPage.Content>
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+      <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+        <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="5,0,0,0">
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,0,0,0">
+            <Image Source="TaxiCostICon.png" WidthRequest="120" HeightRequest="80" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" Padding="0,0,10,0" HorizontalOptions="EndAndExpand">
+            <Image x:Name="MenuButton" Source="bars.png" WidthRequest="22" HeightRequest="26" />
+            <StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="MenuButton_Tapped"/>
+            </StackLayout.GestureRecognizers>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout x:Name="LoadingPanel" IsVisible="false" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Vertical" Padding="5,0,5,0">
+          <Image HorizontalOptions="Center" Source="gpsloading.png" WidthRequest="46" HeightRequest="46" />
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+            <Label XAlign="Center"  Text="Αναζήτηση της θέσης σας. Παρακαλώ περιμένετε..." FontSize="12" TextColor="#30A1FF" />
+          </StackLayout>
+          <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="5,0,5,0">
+            <Button x:Name="CancelGpsButton"
+                  Clicked="CancelGps_ButtonClicked"
+                  Text="Ακύρωση"
+                  HorizontalOptions="Center"
+                  TextColor="#FF0000"
+                  BorderColor="Black"
+                  BackgroundColor="Transparent"
+                  VerticalOptions="CenterAndExpand" />
+            <StackLayout  Padding="0,19,0,0">
+              <Image HorizontalOptions="Center" Source="cross.png" WidthRequest="15" HeightRequest="15" />
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout x:Name="AreaButton"  HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="5,0,5,0">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="AreaButtonTapped"/>
+          </StackLayout.GestureRecognizers>
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+            <Label XAlign="Start"  Text="Επιλέξτε περιοχή" FontSize="12" TextColor="#FFBFBFBE" />
+          </StackLayout>
+          <Frame Padding="3"  OutlineColor="Black" HorizontalOptions="FillAndExpand">
+            <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+              <Image x:Name="AreaImage" Source="group.png" WidthRequest="25" HeightRequest="24" HorizontalOptions="LayoutOptions.Start"/>
+              <StackLayout  HorizontalOptions="Start" Orientation="Horizontal" Padding="0,5,0,0">
+                <Label x:Name="AreaText" XAlign="Start"  Text="Αθήνα ή Θεσσαλονίκη" FontSize="17"  TextColor="Black" />
+              </StackLayout>
+              <StackLayout   HorizontalOptions="EndAndExpand" Orientation="Horizontal" Padding="0,5,3,0">
+                <Image Source="arrow.png" WidthRequest="16" HeightRequest="16"/>
+              </StackLayout>
+            </StackLayout>
+          </Frame>
+        </StackLayout>
+        <StackLayout x:Name="PeriodButton"  HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="5,0,5,0">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="PeriodButtonTapped"/>
+          </StackLayout.GestureRecognizers>
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+            <Label XAlign="Start"  Text="Επιλέξτε χρονική περίοδο" FontSize="12" TextColor="#FFBFBFBE" />
+          </StackLayout>
+          <Frame Padding="3"  OutlineColor="Black" HorizontalOptions="FillAndExpand">
+            <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+              <Image  x:Name="PeriodImage" Source="sun.png" WidthRequest="25" HeightRequest="24" HorizontalOptions="LayoutOptions.Start"/>
+              <StackLayout  HorizontalOptions="Start" Orientation="Horizontal" Padding="0,5,0,0">
+                <Label  x:Name="PeriodText" XAlign="Start"  Text="Ημέρα (05:00 π.μ - 12:00 π.μ)" FontSize="17"  TextColor="Black" />
+              </StackLayout>
+              <StackLayout   HorizontalOptions="EndAndExpand" Orientation="Horizontal" Padding="0,5,3,0">
+                <Image Source="arrow.png" WidthRequest="16" HeightRequest="16"/>
+              </StackLayout>
+            </StackLayout>
+          </Frame>
+        </StackLayout>
+        <StackLayout x:Name="PickUpPlaceButton"  HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="5,0,5,0">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="PickUpPlaceButtonTapped"/>
+          </StackLayout.GestureRecognizers>
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+            <Label XAlign="Start"  Text="Τοποθεσία παραλαβής (Αεροδρόμιο - Κτελ)" FontSize="12" TextColor="#FFBFBFBE" />
+          </StackLayout>
+          <Frame Padding="3"  OutlineColor="Black" HorizontalOptions="FillAndExpand">
+            <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+              <Image x:Name="PickUpPlaceImage" Source="round.png" WidthRequest="25" HeightRequest="24" HorizontalOptions="LayoutOptions.Start"/>
+              <StackLayout  HorizontalOptions="Start" Orientation="Horizontal" Padding="0,5,0,0">
+                <Label x:Name="PickUpPlaceText" XAlign="Start"  Text="Όχι" FontSize="17"  TextColor="Black" />
+              </StackLayout>
+              <StackLayout   HorizontalOptions="EndAndExpand" Orientation="Horizontal" Padding="0,5,3,0">
+                <Image Source="arrow.png" WidthRequest="16" HeightRequest="16"/>
+              </StackLayout>
+            </StackLayout>
+          </Frame>
+        </StackLayout>
+        <StackLayout x:Name="LuggageButton"  HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="5,0,5,0">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="LuggageButtonTapped"/>
+          </StackLayout.GestureRecognizers>
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+            <Label XAlign="Start"  Text="Επιλέξτε αποσκευές" FontSize="12" TextColor="#FFBFBFBE" />
+          </StackLayout>
+          <Frame Padding="3"  OutlineColor="Black" HorizontalOptions="FillAndExpand">
+            <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+              <Image  x:Name="LuggageImage" Source="round.png" WidthRequest="25" HeightRequest="24" HorizontalOptions="LayoutOptions.Start"/>
+              <StackLayout  HorizontalOptions="Start" Orientation="Horizontal" Padding="0,5,0,0">
+                <Label x:Name="LuggageText" XAlign="Start"  Text="Χωρίς αποσκευές" FontSize="17"  TextColor="Black" />
+              </StackLayout>
+              <StackLayout   HorizontalOptions="EndAndExpand" Orientation="Horizontal" Padding="0,5,3,0">
+                <Image Source="arrow.png" WidthRequest="16" HeightRequest="16"/>
+              </StackLayout>
+            </StackLayout>
+          </Frame>
+        </StackLayout>
+        <StackLayout x:Name="GPSButton"  HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="5,0,5,0">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="GPSButtonTapped"/>
+          </StackLayout.GestureRecognizers>
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+            <Label XAlign="Start"  Text="Αφετηρία - Χρήση της τοποθεσίας μου" FontSize="12" TextColor="#FFBFBFBE" />
+          </StackLayout>
+          <Frame Padding="3"  OutlineColor="Black" HorizontalOptions="FillAndExpand">
+            <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+              <Image  x:Name="GPSImage" Source="round.png" WidthRequest="25" HeightRequest="24" HorizontalOptions="LayoutOptions.Start"/>
+              <StackLayout  HorizontalOptions="Start" Orientation="Horizontal" Padding="0,5,0,0">
+                <Label x:Name="GPSText" XAlign="Start"  Text="Όχι" FontSize="17"  TextColor="Black" />
+              </StackLayout>
+              <StackLayout   HorizontalOptions="EndAndExpand" Orientation="Horizontal" Padding="0,5,3,0">
+                <Image Source="arrow.png" WidthRequest="16" HeightRequest="16"/>
+              </StackLayout>
+            </StackLayout>
+          </Frame>
+        </StackLayout>
+        <StackLayout x:Name="FromAddressInput"   HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="5,0,5,0">
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+            <Label XAlign="Start"  Text="Διεύθυνση αφετηρίας" FontSize="12" TextColor="#FFBFBFBE" />
+          </StackLayout>
+          <Frame Padding="0" OutlineColor="Black" HorizontalOptions="FillAndExpand">
+            <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+              <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0,0,0,0">
+                <Entry Focused="FromAddressInput_Focused" x:Name="FromAddressInputText" TextColor="Black" FontSize="17" Text="Από...."  HorizontalOptions="FillAndExpand" />
+              </StackLayout>
+            </StackLayout>
+          </Frame>
+        </StackLayout>
+        <StackLayout  x:Name="ToAddressInput"  HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="5,0,5,0">
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+            <Label XAlign="Start"  Text="Διεύθυνση Προορισμού" FontSize="12" TextColor="#FFBFBFBE" />
+          </StackLayout>
+          <Frame Padding="0"  OutlineColor="Black" HorizontalOptions="FillAndExpand">
+            <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+              <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0,0,0,0">
+                <Entry  Focused="ToAddressInput_Focused" x:Name="ToAddressInputText" TextColor="Black" FontSize="17" Text="Προς...."  HorizontalOptions="FillAndExpand" />
+              </StackLayout>
+            </StackLayout>
+          </Frame>
+        </StackLayout>
+        <StackLayout x:Name="EstimateArea"  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="5,0,5,0">
+          <Button x:Name="EstimateButton"
+                 Clicked="EstimateButtonClicked"
+                 Text="Υπολογισμος"
+                 HorizontalOptions="Center"
+                 TextColor="#30A1FF"
+                 BorderColor="Black"
+                 BackgroundColor="Transparent"
+                 VerticalOptions="CenterAndExpand" />
+          <StackLayout  Padding="0,16,0,0">
+            <Image x:Name="EstimateArrow" HorizontalOptions="Center" Source="arrowright.png" WidthRequest="20" HeightRequest="20" />
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

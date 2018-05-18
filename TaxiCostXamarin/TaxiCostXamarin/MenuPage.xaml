@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TaxiCostXamarin.MenuPage">
+  <TabbedPage.Children>
+    <ContentPage Title="Τιμοκαταλογος" BackgroundColor="#ffffff">
+      <StackLayout Padding="0,10,0,0">
+        <ListView x:Name="CatalogList" RowHeight="60" HasUnevenRows="true"  HorizontalOptions="FillAndExpand">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout Orientation="Vertical" BackgroundColor="#ffffff"  HorizontalOptions="FillAndExpand" >
+                  <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal" Padding="7,0,7,0"  HorizontalOptions="FillAndExpand">
+                      <StackLayout  HorizontalOptions="Start">
+                        <Image Source="{Binding CatalogIcon}" WidthRequest="30" HeightRequest="24" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,7,50,0">
+                        <Label Text="{Binding CatalogDescription}" FontSize="13" HorizontalOptions="Start" TextColor="#FF5F5F5F" />
+                      </StackLayout>
+                    </StackLayout>
+                    <StackLayout  Orientation="Horizontal"  HorizontalOptions="EndAndExpand" Padding="0,0,15,0" >
+                      <Image Source="money.png"  WidthRequest="30" HeightRequest="24"  HorizontalOptions="End"/>
+                      <Label Text="{Binding CatalogPrice}" FontSize="18" TextColor="#72c02c" />
+                    </StackLayout>
+                    <StackLayout Padding="7,0,7,0"  HorizontalOptions="StartAndExpand">
+                      <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                  </StackLayout>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Η Εφαρμογη" BackgroundColor="#ffffff">
+      <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+          <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="5,0,0,0">
+            <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,0,0,0">
+              <Image Source="TaxiCostICon.png" WidthRequest="120" HeightRequest="80" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Η εφαρμογή Taxi Cost GR δίνει την δυνατότητα στους χρήστες να υπολογίσουν της εκτίμηση του κόστους μίας διαδρομής με ταξί (με βάση την βέλτιστη πιθανή διαδρομή)" FontSize="14"  TextColor="#FF898989" />
+          </StackLayout>
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Η εφαρμογή υπολογίζει το συνολικό κόστος της διαδρομής σύμφωνα με" FontSize="14"  TextColor="#FFFFC837" />
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Την τοποθεσία του χρήστη (Αθήνα, Θεσααλονίκη - Επαρχία ή νησιά)" FontSize="14"  TextColor="Black" />
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Τις χρεώσεις" FontSize="14"  TextColor="#FF30A1FF" />
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Περίοδος χρέωσης (νύχτα - ημέρα)" FontSize="14"  TextColor="#FF64851E" />
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Ελάχιστο κόστος διαδρομής" FontSize="14"  TextColor="#FF64851E" />
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Χρεώσεις από και πρός αεροδρόμια" FontSize="14"  TextColor="#FF64851E" />
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Χρεώσεις προς σταθμούς Μ.Μ.Μ" FontSize="14"  TextColor="#FF64851E" />
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Χρεώσεις αποσκευών / τεμάχιο" FontSize="14"  TextColor="#FF64851E" />
+          </StackLayout>
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+          <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="12,0,12,0">
+            <Label XAlign="Center"  Text="Η εφαρμογή Taxi Cost GR δεν διασφαλίζει ότι τα δεδομένα είναι ακριβή. H διαδρομή υπολογίζεται με βάση την συντομότερη δυνατή. Η εφαρμογή δεν υπολογίζει το έξτρα κόστος διοδίων κ.λ.π . Για διαδρομές εκτός νομών η τιμή ενδέχεται να διαφέρει." FontSize="14"  TextColor="Red" />
+          </StackLayout>
+        </StackLayout>
+      </ScrollView>
+    </ContentPage>
+  </TabbedPage.Children>
+</TabbedPage>

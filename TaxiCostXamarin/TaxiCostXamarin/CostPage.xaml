@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxiCostXamarin.CostPage">
+  <ContentPage.Content>
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+      <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+        <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="5,0,0,0">
+          <StackLayout  HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,0,0,0">
+            <Image Source="TaxiCostICon.png" WidthRequest="120" HeightRequest="80" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" Padding="0,0,10,0" HorizontalOptions="EndAndExpand">
+            <Image x:Name="MenuButton" Source="bars.png" WidthRequest="22" HeightRequest="26" />
+            <StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="MenuButton_Tapped"/>
+            </StackLayout.GestureRecognizers>
+          </StackLayout>
+        </StackLayout>
+
+        <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Vertical">
+          <Label XAlign="Center" HorizontalOptions="CenterAndExpand"  x:Name="RoutDescription" FontSize="20" TextColor="#FF5F5F5F" />
+          <Label XAlign="Center" HorizontalOptions="CenterAndExpand"  x:Name="DistanceDescription" FontSize="12" TextColor="#FF30A1FF" />
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+        </StackLayout>
+
+        <StackLayout  HorizontalOptions="FillAndExpand"  Padding="0,0,0,0" Orientation="Vertical">
+          <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+              <Label XAlign="Start" HorizontalOptions="StartAndExpand" Text="Κόστος" FontSize="18" TextColor="#FF5F5F5F" />
+            </StackLayout>
+            <StackLayout Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+              <Label XAlign="Start" HorizontalOptions="EndAndExpand"  x:Name="TotalCostLabel" FontSize="18" TextColor="#72c02c" />
+            </StackLayout>
+          </StackLayout>
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Label x:Name="AnalyticCost" XAlign="Start" FontAttributes="Italic"  HorizontalOptions="StartAndExpand" FontSize="10" TextColor="#FF5F5F5F" />
+          </StackLayout>
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+        </StackLayout>
+
+        <StackLayout  HorizontalOptions="FillAndExpand"  Padding="0,0,0,0" Orientation="Vertical">
+          <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+              <Label XAlign="Start" HorizontalOptions="StartAndExpand" Text="Διάρκεια" FontSize="18" TextColor="#FF5F5F5F" />
+            </StackLayout>
+            <StackLayout Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+              <Label XAlign="Start" HorizontalOptions="EndAndExpand"  x:Name="DurationLabel" FontSize="18" TextColor="Black" />
+            </StackLayout>
+          </StackLayout>
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Label x:Name="AnalyticDuration" XAlign="Start" FontAttributes="Italic"  HorizontalOptions="StartAndExpand" FontSize="10" TextColor="#FF5F5F5F" />
+          </StackLayout>
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+        </StackLayout>
+
+        <StackLayout  HorizontalOptions="FillAndExpand"  Padding="0,0,0,0" Orientation="Vertical">
+          <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+              <Label XAlign="Start" HorizontalOptions="StartAndExpand" Text="Χάρτης" FontSize="18" TextColor="#FF5F5F5F" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="0,0,10,0" HorizontalOptions="EndAndExpand">
+              <Image  x:Name="MapButton"  Source="arrows.png" WidthRequest="28" HeightRequest="32" />
+              <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="MapButton_Tapped"/>
+              </StackLayout.GestureRecognizers>
+            </StackLayout>
+          </StackLayout>
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+        </StackLayout>
+
+        <StackLayout  HorizontalOptions="FillAndExpand"  Padding="0,0,0,0" Orientation="Vertical">
+          <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+              <Label XAlign="Start" HorizontalOptions="StartAndExpand" Text="Αναλυτικές χρεώσεις" FontSize="18" TextColor="#FF5F5F5F" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="0,0,10,0" HorizontalOptions="EndAndExpand">
+              <Image Source="receipten.png" WidthRequest="28" HeightRequest="32" />
+            </StackLayout>
+          </StackLayout>
+          <StackLayout Padding="10,0,10,0"  HorizontalOptions="StartAndExpand">
+            <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+          </StackLayout>
+        </StackLayout>
+
+        <ListView x:Name="DetailedCostList" RowHeight="60" HasUnevenRows="true"  HorizontalOptions="FillAndExpand" ItemTapped="DetailedCostList_ItemTapped" >
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout Orientation="Vertical" BackgroundColor="#ffffff"  HorizontalOptions="FillAndExpand" >
+                  <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal" Padding="7,0,7,0"  HorizontalOptions="FillAndExpand">
+                      <StackLayout  HorizontalOptions="Start">
+                        <Image Source="{Binding TimeZoneIcon}" WidthRequest="30" HeightRequest="24" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,7,0,0">
+                        <Label Text="{Binding TimeZoneText}" FontSize="13" HorizontalOptions="Start" TextColor="#FF5F5F5F" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,4,0,0" HorizontalOptions="EndAndExpand" >
+                        <Label Text="{Binding TimeZoneCost}" FontSize="16" HorizontalOptions="End" TextColor="#72c02c" />
+                      </StackLayout>
+                    </StackLayout>
+                    <StackLayout Padding="7,0,7,0"  HorizontalOptions="StartAndExpand">
+                      <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal" Padding="7,0,7,0"  HorizontalOptions="FillAndExpand">
+                      <StackLayout  HorizontalOptions="Start">
+                        <Image Source="{Binding StartPriceIcon}" WidthRequest="30" HeightRequest="24" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,7,0,0">
+                        <Label Text="{Binding StartPriceLabel}" FontSize="13" HorizontalOptions="Start" TextColor="#FF5F5F5F" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,4,0,0" HorizontalOptions="EndAndExpand" >
+                        <Label Text="{Binding StartPriceCost}" FontSize="16" HorizontalOptions="End" TextColor="#72c02c" />
+                      </StackLayout>
+                    </StackLayout>
+                    <StackLayout Padding="7,0,7,0"  HorizontalOptions="StartAndExpand">
+                      <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal" Padding="7,0,7,0"  HorizontalOptions="FillAndExpand">
+                      <StackLayout  HorizontalOptions="Start">
+                        <Image Source="{Binding TotalKmCostIcon}" WidthRequest="30" HeightRequest="24" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,7,0,0">
+                        <Label Text="{Binding TotalKmText}" FontSize="13" HorizontalOptions="Start" TextColor="#FF5F5F5F" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,4,0,0" HorizontalOptions="EndAndExpand" >
+                        <Label Text="{Binding TotalKmCost}" FontSize="16" HorizontalOptions="End" TextColor="#72c02c" />
+                      </StackLayout>
+                    </StackLayout>
+                    <StackLayout Padding="7,0,7,0"  HorizontalOptions="StartAndExpand">
+                      <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal" Padding="7,0,7,0"  HorizontalOptions="FillAndExpand">
+                      <StackLayout  HorizontalOptions="Start">
+                        <Image Source="{Binding TimePerHourIcon}" WidthRequest="30" HeightRequest="24" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,7,0,0">
+                        <Label Text="{Binding TimePerHourText}" FontSize="13" HorizontalOptions="Start" TextColor="#FF5F5F5F" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,4,0,0" HorizontalOptions="EndAndExpand" >
+                        <Label Text="{Binding TimePerHourCost}" FontSize="16" HorizontalOptions="End" TextColor="#72c02c" />
+                      </StackLayout>
+                    </StackLayout>
+                    <StackLayout Padding="7,0,7,0"  HorizontalOptions="StartAndExpand">
+                      <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal" Padding="7,0,7,0"  HorizontalOptions="FillAndExpand">
+                      <StackLayout  HorizontalOptions="Start">
+                        <Image Source="{Binding PickUpPlaceIcon}" WidthRequest="30" HeightRequest="24" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,7,0,0">
+                        <Label Text="{Binding PickUpPlaceText}" FontSize="13" HorizontalOptions="Start" TextColor="#FF5F5F5F" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,4,0,0" HorizontalOptions="EndAndExpand" >
+                        <Label Text="{Binding PickUpPlaceCost}" FontSize="16" HorizontalOptions="End" TextColor="#72c02c" />
+                      </StackLayout>
+                    </StackLayout>
+                    <StackLayout Padding="7,0,7,0"  HorizontalOptions="StartAndExpand">
+                      <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal" Padding="7,0,7,0"  HorizontalOptions="FillAndExpand">
+                      <StackLayout  HorizontalOptions="Start">
+                        <Image Source="{Binding LuggageIcon}" WidthRequest="30" HeightRequest="24" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,7,0,0">
+                        <Label Text="{Binding LuggageText}" FontSize="13" HorizontalOptions="Start" TextColor="#FF5F5F5F" />
+                      </StackLayout>
+                      <StackLayout  Padding="0,4,0,0" HorizontalOptions="EndAndExpand" >
+                        <Label Text="{Binding LuggageCost}" FontSize="16" HorizontalOptions="End" TextColor="#72c02c" />
+                      </StackLayout>
+                    </StackLayout>
+                    <StackLayout Padding="7,0,7,0"  HorizontalOptions="StartAndExpand">
+                      <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                  </StackLayout>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

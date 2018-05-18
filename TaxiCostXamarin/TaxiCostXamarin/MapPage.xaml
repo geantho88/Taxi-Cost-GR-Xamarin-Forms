@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxiCostXamarin.MapPage">
+  <ContentPage.Content>
+    <StackLayout BackgroundColor="#ffffff">
+      <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="10,7,10,0">
+        <Label XAlign="Center" HorizontalOptions="CenterAndExpand"  x:Name="RoutDescription" FontSize="17" TextColor="#FF5F5F5F" />
+        <Image Source="line.png" HorizontalOptions="StartAndExpand"/>     
+        <StackLayout Orientation="Horizontal">
+          <Image Source="road.png" WidthRequest="22" HeightRequest="26" />
+          <Label XAlign="Center" HorizontalOptions="StartAndExpand"  x:Name="DistanceDescription" FontSize="14" TextColor="#FF5F5F5F" />
+          <Image Source="clock.png" WidthRequest="22" HeightRequest="26" />
+          <Label XAlign="Center" HorizontalOptions="StartAndExpand"  x:Name="DurationDescription" FontSize="14" TextColor="#FF5F5F5F" />
+          <Image Source="money.png" WidthRequest="22" HeightRequest="26" />
+          <Label XAlign="Center" HorizontalOptions="StartAndExpand"  x:Name="CostDescription" FontSize="14" TextColor="#72c02c" />
+        </StackLayout>
+        <Image Source="line.png" HorizontalOptions="StartAndExpand"/>
+      </StackLayout>
+      <WebView x:Name="Browser" WidthRequest="1000" HeightRequest="1000" />
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

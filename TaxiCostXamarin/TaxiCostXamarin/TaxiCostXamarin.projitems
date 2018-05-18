@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{d8bfd616-5655-45cf-86cb-68472dd762a8}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>b9af14d1-04a8-4c51-b883-a989c18ee0d8</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TaxiCostXamarin</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CostPage.xaml.cs">
+      <DependentUpon>CostPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Enviroment\INetworkConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DistanceMatrixApi\ApiDistanceMatrixQueryResults.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DistanceMatrixApi\Distance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DistanceMatrixApi\Duration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DistanceMatrixApi\Element.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DistanceMatrixApi\RootObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DistanceMatrixApi\Row.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\Enums.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LocationApi\ApiLocationQueryResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LocationApi\MatchedSubstring.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LocationApi\Prediction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LocationApi\Term.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ViewModel\AnalyticCost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Catalog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CostCalculation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CostPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MapPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
